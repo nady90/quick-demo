@@ -6,6 +6,7 @@ export default function VisualSide() {
     <div className="relative w-full h-full">
       <div className="absolute w-[85%] left-0 top-0 border-8  shadow-lg border-gray-50 rounded-3xl ">
         <Image
+          className="w-full"
           src="/images/img-1.png"
           width={460}
           height={259}
