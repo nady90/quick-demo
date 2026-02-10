@@ -1,22 +1,32 @@
 import { Courier_Prime, Roboto_Mono } from "next/font/google";
+import WindowControls from "../WindowControls/WindowControls";
+import { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 const courierPrime = Courier_Prime({ subsets: ["latin"], weight: ["400"] });
 const robotoMono = Roboto_Mono({ subsets: ["latin"] });
 
-export default function CodeContainer() {
+export default function CodeSnippet({
+  title,
+  className,
+}: {
+  title: ReactNode;
+  className?: string;
+}) {
   return (
-    <div className="max-w-120 aspect-video shadow-lg bg-white max-h-81.75 pb-2 px-2 rounded-3xl flex flex-col border-8 border-gray-50">
+    <div
+      className={cn(
+        "max-w-120 shadow-lg bg-white max-h-47.5 pb-2 px-2 rounded-3xl flex flex-col border-8 border-gray-50",
+        className,
+      )}
+    >
       <div className="py-2 flex flex-row justify-between px-2">
-        <div className="flex flex-row gap-x-2">
-          <div className="w-3 h-3 rounded-full border-[1.2px] border-gray-400"></div>
-          <div className="w-3 h-3 rounded-full border-[1.2px] border-gray-400"></div>
-          <div className="w-3 h-3 rounded-full border-[1.2px] border-gray-400"></div>
-        </div>
+        <WindowControls />
         <div>
           <p
             className={`${courierPrime.className} text-gray-400 text-sm tracking-tight`}
           >
-            API Request
+            {title}
           </p>
         </div>
       </div>
