@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CodeContainer from "./CodeContainer";
+import CodeSnippet from "../CodeSnippet/CodeSnippet";
 
 export default function VisualSide() {
   return (
@@ -13,7 +13,7 @@ export default function VisualSide() {
         />
       </div>
       <div className="absolute right-0 w-[85%] top-[31%] z-10 ">
-        <CodeContainer />
+        <CodeSnippet title={<span>API Request</span>} />
       </div>
     </div>
   );
